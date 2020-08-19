@@ -6,7 +6,6 @@ Command-line utility for [Freecycle.org](https://www.freecycle.org/).
 
 ### Prerequisites
 
-Install:
 - [Java](https://openjdk.java.net/install/)
 - [Maven](https://maven.apache.org/download.cgi)
 
@@ -40,4 +39,21 @@ Bash:
 
 ```bash
 > echo "alias jfreecycle=\"java -jar /path/to/jar/jfreecycle.jar\"" >> ~/.bashrc
+```
+
+```bash
+> echo "alias jfreecycle=\"java -jar /path/to/jar/jfreecycle.jar\"" >> ~/.config/fish/fish.config
+```
+
+## Usage
+
+```bash
+# Display ten most recent posts from GalwayIE group
+jfreecycle GalwayIE
+
+# Display ten most recent offer posts from GalwayIE group
+jfreecycle -t offer GalwayIE
+
+# Display ten most recent wanted posts from GalwayIE group
+jfreecycle -t wanted GalwayIE
 ```
