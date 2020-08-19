@@ -46,7 +46,7 @@ echo "alias jfreecycle=\"java -jar /path/to/jar/jfreecycle.jar\"" >> ~/.bashrc
 Fish:
 
 ```bash
-echo "alias jfreecycle=\"java -jar /path/to/jar/jfreecycle.jar\"" >> ~/.config/fish/fish.config
+echo "alias jfreecycle=\"java -jar /path/to/jar/jfreecycle.jar\"" >> ~/.config/fish/config.fish
 ```
 
 ## 🐾 Usage
