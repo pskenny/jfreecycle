@@ -25,7 +25,7 @@ public class App {
     }
 
     public static void main(String[] args) {
-        ArgumentParser parser = ArgumentParsers.newFor("jfreecycle").build().description("Freecycle.org scraper.");
+        ArgumentParser parser = ArgumentParsers.newFor("jfreecycle").build().description("Freecycle.org command-line utility.").version("0.1");
         parser.addArgument("groupid").metavar("GROUPID").type(String.class).required(true).help("Freecycle group ID");
         parser.addArgument("-t", "-type").metavar("TYPE").type(String.class)
                 .help("Enter \"offer\" or \"wanted\"");
