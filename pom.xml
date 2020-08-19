@@ -21,16 +21,9 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>1.18.12</version>
-      <scope>provided</scope>
-    </dependency>
-    <!--JSoup for handling DOM-->
-    <dependency>
-      <groupId>org.jsoup</groupId>
-      <artifactId>jsoup</artifactId>
-      <version>1.13.1</version>
+      <groupId>io.github.pskenny</groupId>
+      <artifactId>libjfreecycle</artifactId>
+      <version>0.1-SNAPSHOT</version>
     </dependency>
 
     <dependency>
