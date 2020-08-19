@@ -1,6 +1,6 @@
-# NOTE: In alpha stage
-
 # ♻️ jfreecycle
+
+__NOTE:__ In alpha stage, do not use
 
 Command-line utility for [Freecycle.org](https://www.freecycle.org/).
 
@@ -40,13 +40,13 @@ Note: jar is built in `target/` folder.
 Bash:
 
 ```bash
-> echo "alias jfreecycle=\"java -jar /path/to/jar/jfreecycle.jar\"" >> ~/.bashrc
+echo "alias jfreecycle=\"java -jar /path/to/jar/jfreecycle.jar\"" >> ~/.bashrc
 ```
 
 Fish:
 
 ```bash
-> echo "alias jfreecycle=\"java -jar /path/to/jar/jfreecycle.jar\"" >> ~/.config/fish/fish.config
+echo "alias jfreecycle=\"java -jar /path/to/jar/jfreecycle.jar\"" >> ~/.config/fish/fish.config
 ```
 
 ## 🐾 Usage
