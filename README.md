@@ -21,7 +21,10 @@ Install:
 > git clone https://github.com/pskenny/jfreecycle # Clone repo
 > cd jfreecycle # Change working directory to repo
 > mvn clean compile assembly:single # Generate Jar
+> java -jar ./target/jfreecycle-0.1-jar-with-dependencies.jar
 ```
+
+Note: jar is in the `target/` folder. 
 
 ## Running
 
