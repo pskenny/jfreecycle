@@ -17,7 +17,6 @@ public class App {
     }
 
     public static void main(String[] args) {
-        new App("GalwayIE");
         if (args.length != 1) {
             System.err.println("Usage: jfreecycle [GroupID]\n    Example: jfreecycle GalwayIE");
             System.exit(1);
