@@ -1,15 +1,17 @@
 # NOTE: In alpha stage
 
-# jfreecycle
+# ♻️ jfreecycle
 
 Command-line utility for [Freecycle.org](https://www.freecycle.org/).
+
+## 🏗️ Building
 
 ### Prerequisites
 
 - [Java](https://openjdk.java.net/install/)
 - [Maven](https://maven.apache.org/download.cgi)
 
-## Building
+### Build Jar
 
 ```bash
 > git clone https://github.com/pskenny/libjfreecycle # Clone freecycle library
@@ -25,7 +27,7 @@ Command-line utility for [Freecycle.org](https://www.freecycle.org/).
 
 Note: jar is built in `target/` folder. 
 
-## Running
+## 🚀 Running
 
 ### Option 1: java -jar command
 
@@ -47,7 +49,7 @@ Fish:
 > echo "alias jfreecycle=\"java -jar /path/to/jar/jfreecycle.jar\"" >> ~/.config/fish/fish.config
 ```
 
-## Usage
+## 🐾 Usage
 
 ```bash
 # Display hundred most recent posts from GalwayIE group
