@@ -10,7 +10,7 @@ import net.sourceforge.argparse4j.inf.ArgumentParserException;
 import net.sourceforge.argparse4j.inf.Namespace;
 
 /**
- * Freecycle commandline utility. Super duper fragile to changes on Freecycle.
+ * Freecycle command-line utility. Super duper fragile to changes on Freecycle.
  * G'luck.
  */
 public class App {
@@ -27,9 +27,9 @@ public class App {
     public static void main(String[] args) {
         ArgumentParser parser = ArgumentParsers.newFor("jfreecycle").build()
                 .description("Freecycle.org command-line utility.").version("0.1")
-                .epilog("Examples:\n" + "  jfreecycle GalwayIE # Display ten most recent posts from GalwayIE group\n"
-                        + "  jfreecycle -t offer GalwayIE # Display ten most recent offer posts from GalwayIE group\n"
-                        + "  jfreecycle -t wanted GalwayIE # Display ten most recent wanted posts from GalwayIE group");
+                .epilog("Examples:\n" + "  jfreecycle GalwayIE # Display hundred most recent posts from GalwayIE group\n"
+                        + "  jfreecycle -t offer GalwayIE # Display hundred most recent offer posts from GalwayIE group\n"
+                        + "  jfreecycle -t wanted GalwayIE # Display hundred most recent wanted posts from GalwayIE group");
         parser.addArgument("groupid").metavar("GROUPID").type(String.class).required(true).help("Freecycle group ID");
         parser.addArgument("-t", "-type").metavar("TYPE").type(String.class).help("Enter \"offer\" or \"wanted\"");
 

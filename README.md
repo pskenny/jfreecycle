@@ -48,12 +48,12 @@ Bash:
 ## Usage
 
 ```bash
-# Display ten most recent posts from GalwayIE group
+# Display hundred most recent posts from GalwayIE group
 jfreecycle GalwayIE
 
-# Display ten most recent offer posts from GalwayIE group
+# Display hundred most recent offer posts from GalwayIE group
 jfreecycle -t offer GalwayIE
 
-# Display ten most recent wanted posts from GalwayIE group
+# Display hundred most recent wanted posts from GalwayIE group
 jfreecycle -t wanted GalwayIE
 ```
