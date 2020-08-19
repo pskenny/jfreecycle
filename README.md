@@ -12,18 +12,18 @@ Command-line utility for [Freecycle.org](https://www.freecycle.org/).
 ## Building
 
 ```bash
-> git clone https://github.com/pskenny/libjfreecycle
+> git clone https://github.com/pskenny/libjfreecycle # Clone freecycle library
 > cd libjfreecycle
-> mvn package # package libjfreecycle
-> mvn install # install to local Maven repository
+> mvn package # Package libjfreecycle
+> mvn install # Install to local Maven repository
 > cd ..
-> git clone https://github.com/pskenny/jfreecycle # Clone repo
-> cd jfreecycle # Change working directory to repo
-> mvn clean compile assembly:single # Generate Jar
-> java -jar ./target/jfreecycle-0.1-jar-with-dependencies.jar
+> git clone https://github.com/pskenny/jfreecycle # Clone jfreecycle
+> cd jfreecycle
+> mvn clean compile assembly:single # Generate jar
+> java -jar ./target/jfreecycle-0.1-jar-with-dependencies.jar # Run jar
 ```
 
-Note: jar is in the `target/` folder. 
+Note: jar is built in `target/` folder. 
 
 ## Running
 
@@ -40,6 +40,8 @@ Bash:
 ```bash
 > echo "alias jfreecycle=\"java -jar /path/to/jar/jfreecycle.jar\"" >> ~/.bashrc
 ```
+
+Fish:
 
 ```bash
 > echo "alias jfreecycle=\"java -jar /path/to/jar/jfreecycle.jar\"" >> ~/.config/fish/fish.config
