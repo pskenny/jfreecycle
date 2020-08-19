@@ -25,10 +25,13 @@ public class App {
     }
 
     public static void main(String[] args) {
-        ArgumentParser parser = ArgumentParsers.newFor("jfreecycle").build().description("Freecycle.org command-line utility.").version("0.1");
+        ArgumentParser parser = ArgumentParsers.newFor("jfreecycle").build()
+                .description("Freecycle.org command-line utility.").version("0.1")
+                .epilog("Examples:\n" + "  jfreecycle GalwayIE # Display ten most recent posts from GalwayIE group\n"
+                        + "  jfreecycle -t offer GalwayIE # Display ten most recent offer posts from GalwayIE group\n"
+                        + "  jfreecycle -t wanted GalwayIE # Display ten most recent wanted posts from GalwayIE group");
         parser.addArgument("groupid").metavar("GROUPID").type(String.class).required(true).help("Freecycle group ID");
-        parser.addArgument("-t", "-type").metavar("TYPE").type(String.class)
-                .help("Enter \"offer\" or \"wanted\"");
+        parser.addArgument("-t", "-type").metavar("TYPE").type(String.class).help("Enter \"offer\" or \"wanted\"");
 
         try {
             Namespace res = parser.parseArgs(args);
@@ -37,14 +40,14 @@ public class App {
             String typeArgument = res.getString("t");
 
             // Handle post type argument
-            if (typeArgument != null){
+            if (typeArgument != null) {
                 if (typeArgument.equals("offer")) {
                     type = Post.Type.OFFER;
                 } else if (typeArgument.equals("wanted")) {
                     type = Post.Type.WANTED;
                 } else {
                     parser.printUsage();
-                    return;
+                    System.exit(1);
                 }
             }
 
