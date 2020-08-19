@@ -1,5 +1,6 @@
 package io.github.pskenny.jfreecycle;
 
+import java.text.SimpleDateFormat;
 import java.util.Collection;
 
 import io.github.pskenny.libjfreecycle.model.Post;
@@ -21,13 +22,32 @@ public class App {
 
     public App(String groupId, Post.Type type) {
         Collection<Post> posts = io.github.pskenny.libjfreecycle.util.PostUtil.getPosts(groupId, type);
-        posts.forEach(System.out::println);
+        SimpleDateFormat formatter = new SimpleDateFormat("MMM dd HH:mm");
+        
+        posts.forEach(post -> {
+            StringBuilder sb = new StringBuilder();
+
+            sb.append(post.getType());
+            sb.append(" ");
+            sb.append(formatter.format(post.getDate()));
+            sb.append(" ");
+            sb.append(post.getTitle());
+            sb.append(" (");
+            sb.append(post.getLocation());
+            sb.append(") https://groups.freecycle.org/");
+            sb.append(groupId);
+            sb.append("/posts/");
+            sb.append(post.getId());
+
+            System.out.println(sb.toString());
+        });
     }
 
     public static void main(String[] args) {
         ArgumentParser parser = ArgumentParsers.newFor("jfreecycle").build()
                 .description("Freecycle.org command-line utility.").version("0.1")
-                .epilog("Examples:\n" + "  jfreecycle GalwayIE # Display hundred most recent posts from GalwayIE group\n"
+                .epilog("Examples:\n"
+                        + "  jfreecycle GalwayIE # Display hundred most recent posts from GalwayIE group\n"
                         + "  jfreecycle -t offer GalwayIE # Display hundred most recent offer posts from GalwayIE group\n"
                         + "  jfreecycle -t wanted GalwayIE # Display hundred most recent wanted posts from GalwayIE group");
         parser.addArgument("groupid").metavar("GROUPID").type(String.class).required(true).help("Freecycle group ID");
