@@ -3,7 +3,7 @@ package io.github.pskenny.jfreecycle;
 import java.text.SimpleDateFormat;
 import java.util.Collection;
 
-import io.github.pskenny.libjfreecycle.model.Post;
+import io.github.pskenny.libjfreecycle.*;
 
 import net.sourceforge.argparse4j.ArgumentParsers;
 import net.sourceforge.argparse4j.inf.ArgumentParser;
@@ -21,7 +21,7 @@ public class App {
     }
 
     public App(String groupId, Post.Type type) {
-        Collection<Post> posts = io.github.pskenny.libjfreecycle.util.PostUtil.getPosts(groupId, type);
+        Collection<Post> posts = new Group(groupId).getPosts(type);
         SimpleDateFormat formatter = new SimpleDateFormat("MMM dd HH:mm");
         
         posts.forEach(post -> {
