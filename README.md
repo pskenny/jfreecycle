@@ -1,9 +1,23 @@
-# ♻️ jfreecycle ![GitHub](https://img.shields.io/github/license/pskenny/jfreecycle)
+![GitHub](https://img.shields.io/github/license/pskenny/jfreecycle)
 
-__NOTE:__ In alpha stage, do not use
+# ♻️ jfreecycle
+
+__NOTE:__ In alpha stage, do not use. <br />
 __NOTE:__ Be cool. Don't blast freecycle with requests.
 
-Command-line utility for [Freecycle.org](https://www.freecycle.org/).
+Command-line utility for [freecycle.org](https://www.freecycle.org/).
+
+## Table Of Contents
+
+- [♻️ jfreecycle](#️-jfreecycle)
+  - [Table Of Contents](#table-of-contents)
+  - [🏗️ Building](#️-building)
+    - [Prerequisites](#prerequisites)
+    - [Build Jar](#build-jar)
+  - [🚀 Running](#-running)
+    - [Option 1: java -jar command](#option-1-java--jar-command)
+    - [Option 2: aliasing](#option-2-aliasing)
+  - [🐾 Usage](#-usage)
 
 ## 🏗️ Building
 
