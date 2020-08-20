@@ -1,6 +1,7 @@
 # ♻️ jfreecycle
 
 __NOTE:__ In alpha stage, do not use
+__NOTE:__ Be cool. Don't blast freecycle with requests.
 
 Command-line utility for [Freecycle.org](https://www.freecycle.org/).
 
@@ -25,14 +26,14 @@ Command-line utility for [Freecycle.org](https://www.freecycle.org/).
 > java -jar ./target/jfreecycle-0.1-jar-with-dependencies.jar # Run jar
 ```
 
-Note: jar is built in `target/` folder. 
+_Note:_ jar is built in `target/` folder. 
 
 ## 🚀 Running
 
 ### Option 1: java -jar command
 
 ```bash
-> java -jar /path/to/jar/jfreecycle.jar
+java -jar /path/to/jar/jfreecycle.jar
 ```
 
 ### Option 2: aliasing
