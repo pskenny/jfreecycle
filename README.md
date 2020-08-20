@@ -1,4 +1,4 @@
-# ♻️ jfreecycle
+# ♻️ jfreecycle ![GitHub](https://img.shields.io/github/license/pskenny/jfreecycle)
 
 __NOTE:__ In alpha stage, do not use
 __NOTE:__ Be cool. Don't blast freecycle with requests.
