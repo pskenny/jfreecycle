@@ -7,6 +7,8 @@ __NOTE:__ Be cool. Don't blast freecycle with requests.
 
 Command-line utility for [freecycle.org](https://www.freecycle.org/).
 
+[![asciicast](https://asciinema.org/a/JMUnHCrE6SzTuCPYeZ64JtE8k.svg)](https://asciinema.org/a/JMUnHCrE6SzTuCPYeZ64JtE8k)
+
 ## Table Of Contents
 
 - [♻️ jfreecycle](#️-jfreecycle)
