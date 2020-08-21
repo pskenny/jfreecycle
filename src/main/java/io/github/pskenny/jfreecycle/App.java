@@ -6,6 +6,7 @@ import java.util.Collection;
 import io.github.pskenny.libjfreecycle.*;
 
 import net.sourceforge.argparse4j.ArgumentParsers;
+import net.sourceforge.argparse4j.inf.Argument;
 import net.sourceforge.argparse4j.inf.ArgumentParser;
 import net.sourceforge.argparse4j.inf.ArgumentParserException;
 import net.sourceforge.argparse4j.inf.Namespace;
@@ -16,14 +17,10 @@ import net.sourceforge.argparse4j.inf.Namespace;
  */
 public class App {
 
-    public App(String groupId) {
-        this(groupId, Post.Type.ALL);
-    }
-
-    public App(String groupId, Post.Type type) {
-        Collection<Post> posts = new Group(groupId).getPosts(type);
+    public App(String groupId, Post.Type type, int results) {
+        Collection<Post> posts = new Group(groupId).getPosts(type, results);
         SimpleDateFormat formatter = new SimpleDateFormat("MMM dd HH:mm");
-        
+
         posts.forEach(post -> {
             StringBuilder sb = new StringBuilder();
 
@@ -46,24 +43,27 @@ public class App {
     public static void main(String[] args) {
         ArgumentParser parser = ArgumentParsers.newFor("jfreecycle").build()
                 .description("Freecycle.org command-line utility.").version("0.1")
-                .epilog("Examples:\n"
-                        + "  jfreecycle GalwayIE # Display hundred most recent posts from GalwayIE group\n"
-                        + "  jfreecycle -t offer GalwayIE # Display hundred most recent offer posts from GalwayIE group\n"
-                        + "  jfreecycle -t wanted GalwayIE # Display hundred most recent wanted posts from GalwayIE group");
+                .epilog("Examples:\n" + "  jfreecycle GalwayIE # Display ten most recent posts from GalwayIE group\n"
+                        + "  jfreecycle -t offer GalwayIE # Display ten most recent offer posts from GalwayIE group\n"
+                        + "  jfreecycle -t wanted GalwayIE # Display ten most recent wanted posts from GalwayIE group");
         parser.addArgument("groupid").metavar("GROUPID").type(String.class).required(true).help("Freecycle group ID");
         parser.addArgument("-t", "-type").metavar("TYPE").type(String.class).help("Enter \"offer\" or \"wanted\"");
+        Argument a = parser.addArgument("-r", "-results").metavar("RESULTS").type(Integer.class)
+                .help("Maximum number of posts to retrieve");
 
         try {
             Namespace res = parser.parseArgs(args);
             String groupIdArgument = res.getString("groupid");
             Post.Type type = Post.Type.ALL;
             String typeArgument = res.getString("t");
+            int results = 10;
+            String resultsArgument = res.getString("r");
 
             // Handle post type argument
             if (typeArgument != null) {
-                if (typeArgument.equals("offer")) {
+                if (typeArgument.equals("offer") || typeArgument.equals("o")) {
                     type = Post.Type.OFFER;
-                } else if (typeArgument.equals("wanted")) {
+                } else if (typeArgument.equals("wanted") || typeArgument.equals("w")) {
                     type = Post.Type.WANTED;
                 } else {
                     parser.printUsage();
@@ -71,7 +71,18 @@ public class App {
                 }
             }
 
-            new App(groupIdArgument, type);
+            // Handle results argument
+            if (resultsArgument != null) {
+                try {
+                    results = Integer.parseInt(resultsArgument);
+                } catch (NumberFormatException ex) {
+                    System.err.println("Error handling -r, -results parameter");
+                    parser.printUsage();
+                    System.exit(1);
+                }
+            }
+
+            new App(groupIdArgument, type, results);
         } catch (ArgumentParserException e) {
             parser.handleError(e);
         }
