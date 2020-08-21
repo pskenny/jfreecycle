@@ -6,7 +6,6 @@ import java.util.Collection;
 import io.github.pskenny.libjfreecycle.*;
 
 import net.sourceforge.argparse4j.ArgumentParsers;
-import net.sourceforge.argparse4j.inf.Argument;
 import net.sourceforge.argparse4j.inf.ArgumentParser;
 import net.sourceforge.argparse4j.inf.ArgumentParserException;
 import net.sourceforge.argparse4j.inf.Namespace;
@@ -48,7 +47,7 @@ public class App {
                         + "  jfreecycle -t wanted GalwayIE # Display ten most recent wanted posts from GalwayIE group");
         parser.addArgument("groupid").metavar("GROUPID").type(String.class).required(true).help("Freecycle group ID");
         parser.addArgument("-t", "-type").metavar("TYPE").type(String.class).help("Enter \"offer\" or \"wanted\"");
-        Argument a = parser.addArgument("-r", "-results").metavar("RESULTS").type(Integer.class)
+        parser.addArgument("-r", "-results").metavar("RESULTS").type(Integer.class)
                 .help("Maximum number of posts to retrieve");
 
         try {
