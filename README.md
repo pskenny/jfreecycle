@@ -69,12 +69,12 @@ echo "alias jfreecycle=\"java -jar /path/to/jar/jfreecycle.jar\"" >> ~/.config/f
 ## 🐾 Usage
 
 ```bash
-# Display hundred most recent posts from GalwayIE group
+# Display ten most recent posts from GalwayIE group
 jfreecycle GalwayIE
 
-# Display hundred most recent offer posts from GalwayIE group
+# Display ten most recent offer posts from GalwayIE group
 jfreecycle -t offer GalwayIE
 
-# Display hundred most recent wanted posts from GalwayIE group
+# Display ten most recent wanted posts from GalwayIE group
 jfreecycle -t wanted GalwayIE
 ```
