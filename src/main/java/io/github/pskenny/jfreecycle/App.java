@@ -75,7 +75,7 @@ public class App {
                 try {
                     results = Integer.parseInt(resultsArgument);
                 } catch (NumberFormatException ex) {
-                    System.err.println("Error handling -r, -results parameter");
+                    System.err.println("Error handling -r, -results parameter: " + results);
                     parser.printUsage();
                     System.exit(1);
                 }
